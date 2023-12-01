@@ -12,8 +12,7 @@ let addContactToSideBar = function(result,$chatArea){
 								<h1>${result["username"]}</h1>
 								<p>${result["status"]}</p>
 								<div class="inner">
-										<a onclick="viewProfileClicked(event)" target="_blank" href="${href}">view profile</a>
-										<a class="report">report user</a>
+										<a onclick="viewProfileClicked(event)" target="_blank" href="${href}">переглянути профіль</a>
 								</div>
 							</div>
 						</li>`
@@ -37,7 +36,7 @@ let ajaxSearchSuccessFunction = function(response){
 	if(results.length == 0){
 		let countNoResultFlag = $chatArea.has(".noResult")['length']
 		if(!countNoResultFlag){
-			$chatArea.append('<p class="noResult addShadowSearch">no results found</p>')
+			$chatArea.append('<p class="noResult addShadowSearch">Немає результатів</p>')
 		}
 		return
 	}
@@ -171,7 +170,7 @@ let createContactTile = function(contact){
 								<h1>${contact["contact__username"]}</h1>
 								<p></p>
 								<div class="inner">
-										<a onclick="viewProfileClicked(event)" target="_blank" href="${href}">view profile</a>
+										<a onclick="viewProfileClicked(event)" target="_blank" href="${href}">переглянути профіль</a>
 										<p></p>
 								</div>
 							</div>

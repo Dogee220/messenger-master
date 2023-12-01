@@ -23,7 +23,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 SECRET_KEY = 'z00(d!ozt%uh&6pst9znjgssl&v)!_=)f@a9!8v#=cpl_#c3md'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['192.168.43.219','127.0.0.1','localhost']
 
