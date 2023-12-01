@@ -1,0 +1,14 @@
+{% extends "authentication/base.html" %}
+{% load static %}
+
+{% block addCss %}
+	<link rel="stylesheet" type="text/css" href="{% static 'authentication/formHolder.css' %}">
+	{% block addCssForm %}{% endblock addCssForm %}
+{% endblock addCss %}
+
+
+{% block body %}
+	<div id="formHolder">
+		{% block form %}{% endblock form %}
+	</div>
+{% endblock body %}

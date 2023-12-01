@@ -1,0 +1,39 @@
+{% extends "authentication/base.html" %}
+
+{% load static %}
+
+{% block addCss %}
+	<link rel="stylesheet" type = "text/css" href="{% static 'authentication/home.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'authentication/Btn.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'authentication/Title.css' %}">
+{% endblock addCss %}
+
+{% block title %}
+	chats
+{% endblock title %}
+	
+{% block body %}
+	
+	<div id="title">
+		<h1>Соціальна мережа</h1>
+		<p>Мессенджер для обміну повідомленнями<p>
+	</div>
+
+	<div class = "join" id="login">
+		<a href="{% url 'auth-login' %}">
+			<div id="content_login">
+				<h4>Авторизуватися</h4>
+				{% comment %} <p>твої друзі чекають на тебе</p> {% endcomment %}
+			</div>
+		</a>
+	</div>
+			
+	<div class = "join" id="signup">
+		<a href="{% url 'auth-signup' %}">
+			<div id="content_signup">
+				<h4>Зареєструватися</h4>
+				{% comment %} <p>та приєднуйся до своїх друзів</p> {% endcomment %}
+			</div>
+		</a>
+	</div>
+{% endblock body %}

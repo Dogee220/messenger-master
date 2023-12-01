@@ -1,0 +1,44 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <title>Соціальна мережа</title>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed|Yanone+Kaffeesatz" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet">
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'chat/base.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'chat/favicon.ico' %}">
+    <link rel="stylesheet" href="{% static 'chat/NavBar.css' %}">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    {% block addCss %}{% endblock addCss %}
+    {% block addScript %}{% endblock addScript %}
+    
+    <title>{% block title %}{% endblock title %}</title>
+  </head>
+  
+  <body id="MainDiv">
+    <div id="AppRoot">
+      <div id="navBar">
+          <nav id="nav1">
+            <ul>
+              {% block navLogo %}{% endblock navLogo %}
+            </ul>
+          </nav>
+
+          <nav id="nav2">
+            <ul>
+              <li><a href="{% url 'chat-profile-settings' %}"><img src="{% static 'chat/images/profile.png' %}" alt="profile"></a></li>
+              {% block navLoginLogout %}{% endblock navLoginLogout %}
+            </ul>
+          </nav>
+      </div>
+
+      {% block body %}{% endblock body %}
+        
+    </div> 
+  </body>
+</html>

@@ -1,0 +1,26 @@
+{% extends "authentication/formHolder.html" %}
+{% load static %}	
+
+{% block addCssForm %}
+	<link rel="stylesheet" type="text/css" href="{% static 'authentication/form.css' %}">
+{% endblock addCssForm %}
+
+{% block form %}
+	
+	<form id="form" method="post">
+		{% if messages %}
+			<ul class='errorlist'>
+				{% for message in messages %}
+					<li>{{ message }}</li>
+				{% endfor %}
+			</ul>
+		{% endif %}
+		<div id="greeting">
+			<h2>З поверненням!</h2>
+			<p>Ваші друзі чекають на тебе</p>
+		</div>
+		{% csrf_token %}
+		{{ form }}
+		<button type="submit">Авторизуватися </button>
+	</form>
+{% endblock form %}

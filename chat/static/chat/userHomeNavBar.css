@@ -1,0 +1,39 @@
+#navBar{
+	grid-template-areas:
+	"navigation"
+	"navigation_";
+	padding:10px 0 0 0;
+	height: 100vh;
+	background-color:rgb(23,23,23);
+}
+
+#nav2{
+	margin-top:auto;
+	margin-bottom:10px;
+	margin-right: auto;
+}
+
+#nav1 ul{
+	flex-flow: column wrap;
+}
+
+#nav2 ul{
+	flex-flow: column wrap;
+	justify-content: flex-end;
+	margin:0;
+}
+
+#nav1 ul li{
+	padding:0;
+}
+
+#nav2 ul li{
+	padding:0;
+	margin:0;
+	margin-bottom:10px;
+}
+
+#AppRoot div ul li img{
+	height: 60px;
+	width:60px;
+}

@@ -1,0 +1,246 @@
+#MainDiv{
+	background-image: radial-gradient(
+										rgb(33, 33, 33),
+										rgb(35, 35, 35),
+										rgb(28, 28, 28),
+										rgb(15, 15, 15),
+										rgb(10,10,10)
+									);
+	height: auto;
+	padding-bottom: 50vh;
+	background-position: center;
+	background-attachment: fixed;
+	overflow: hidden;
+}
+
+#AppRoot{
+	height: 100vh;  /* Заполняем 100% высоты окна просмотра */
+    overflow: hidden;
+    background-position: center;
+}
+
+#container{
+	padding: 50px 20% 0px 20%;
+	display:grid;
+	grid-template-columns: .34fr 1fr;
+	grid-column-gap: 20px;
+	grid-template-areas: 
+	"image form";
+}
+
+#profilePic{
+	grid-area:image;
+	display: flex;
+	justify-content: space-around;
+}
+
+.form{
+	grid-area:form;
+}
+
+#profilePic img{
+		border-radius: 50%;
+		height:250px;
+}
+
+#form a{
+	display:none;
+}
+
+#form{
+	padding-top:10px;
+	display:flex;
+	flex-flow: column wrap;
+	justify-content: flex-end;
+}
+
+#form .errorlist{
+	list-style:none;
+	background-color:rgba(234, 58, 58,.95);
+	border-radius:5px;
+	padding:6px 6px 6px 6px;
+	font-family:Yanone Kaffeesatz; 
+	color:rgb(15, 15, 15);
+}	
+
+#form input{
+	
+	padding: 7px 0 7px 5px;
+	width:100%;
+	height: 30px;
+	font-family:Yanone Kaffeesatz;
+	background-color: rgba(0,0,0,0);
+	border-width:0px;
+	color:rgb(206, 206, 206);
+}
+
+#form input[name=username]{
+	font-size: 55px;
+	height:60px;
+	border-width: 0px;
+	background-color: rgba(0,0,0,0)
+	
+}
+
+#form input[name=email]{
+
+	font-size: 22px;
+}
+
+#form input[name=status]{
+	font-size: 20px;
+}
+
+#form input[type=File]{
+	display:none;
+}
+
+#labelHolder{
+	padding-top:13px;
+	width:90px;
+}
+
+#labelHolder label{
+	width: 40px;
+}
+
+#customFileButton{
+	background-color:white;
+	width: 128px;
+	height: 35px;
+	border-radius:5px;
+	display:flex;
+	justify-content: center;
+	font-family: Yanone Kaffeesatz;
+	font-size: 19px;
+	border:solid;
+	border-width:1.2px;
+	border-color:#668cff;
+	cursor:pointer;
+}
+
+#customFileButton p{
+	align-self: center;
+	cursor:pointer;
+} 
+
+#action{
+	display:grid;
+	grid-template-areas:
+	"save back";
+	position:absolute;
+	right:200px;
+}
+
+#save{
+	grid-area:save;
+	display: flex;
+	justify-content:flex-end;
+	padding-right:10px;
+}
+
+#back{
+	grid-area:back;
+	display: flex;
+	justify-content: flex-start;
+	
+}
+
+#action .buttonDiv .link{
+	display: flex;
+	justify-content: flex-start;
+	text-decoration: none;
+}
+
+.button{
+	width: 130px ;
+	height:27px ;
+	border-radius:5px;
+	border-width:5px;
+	display:flex;
+	justify-content: center;
+	padding-top: 10px;
+	transition: all .2s ease-in-out;
+	-moz-transition: all .3s ease-out;
+	cursor:pointer;
+}
+
+.button:hover{
+	box-shadow: 0px 5px 50px #000000;
+}
+
+.button p{
+	font-family: Yanone Kaffeesatz;
+	font-size: 19px;
+	color:rgb(17, 17, 17);
+}
+
+#save div{
+	background-color:rgb(136, 252, 128);
+}
+
+
+#back .link div{
+	background-color:rgb(255, 84, 84);
+}
+
+@media screen and (max-width: 1024px){
+	#action{
+		position:relative;
+		right:0px;
+		padding-top: 20px;
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: flex-start;
+	}
+
+	#save{
+		justify-content: flex-start;
+		padding-right:10px;
+		padding-bottom: 10px;
+	}
+}
+
+@media screen and (max-width: 768px){
+	
+	#container{
+		grid-template-columns: 1fr;
+		grid-template-rows:1fr 1fr;
+		grid-template-areas: 
+		"image"
+		"form";
+	}
+
+	#action{
+		position:relative;
+		right:0px;
+		padding-top: 10px;
+		display:flex;
+		flex-flow: row nowrap;
+		justify-content: center;
+	}
+
+	#form input{
+		text-align:center;
+		padding-left:0;
+	}
+
+	#save{
+		justify-content: flex-start;
+		padding-right:10px;
+		padding-bottom:10px;
+	}
+	
+	.button{
+		width: 150px;
+	}
+
+	#labelHolder {
+		width:100%;
+	}
+	
+	#customFileButton{
+		align-self: center;
+		width:100%;
+	}
+}

@@ -1,0 +1,36 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    <link rel="icon" type="image/x-icon" href="{% static 'chat/favicon.ico' %}">
+    <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed|Yanone+Kaffeesatz" rel="stylesheet">
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'authentication/base.css' %}">
+    <link rel="stylesheet" href="{% static 'authentication/NavBar.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    {% block addCss %}{% endblock addCss %}
+    {% block addScript %}{% endblock addScript %}
+    
+    <title>Соціальна мережа</title>
+  </head>
+  
+  <body style="background-color: #2c3e50;">
+    <div id="AuthRoot">
+        
+      <div id="navBar">
+          <nav id="nav1">
+            <ul>
+              <li><a href="{% url 'auth-home' %}"><img src = "{% static 'authentication/images/logo.png' %}" alt="chatting_django"></a></li>
+            </ul>
+          </nav>
+      </div>
+
+      {% block body %}{% endblock body %}
+        
+    </div>
+      
+  </body>
+</html>
